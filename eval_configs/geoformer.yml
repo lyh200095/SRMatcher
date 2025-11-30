@@ -1,0 +1,43 @@
+default: &default
+    class: 'GeoFormer'
+    match_threshold: 0.2
+    imsize: -1
+    no_match_upscale: False
+    ckpt: "./logs/tb_logs/default_exp_name/ablation_dino_s/checkpoints/val_loss=2.872-epoch=26-val_auc@3px=0.7136.ckpt"
+hpatch:
+    <<: *default
+    imsize: 480
+    match_threshold: 0.0625
+    no_match_upscale: True
+fire:
+    <<: *default
+    match_threshold: 0.2
+    imsize: 768
+    ransac_thres: 15
+    no_match_upscale: True
+isc-he:
+    <<: *default
+    imsize: 480
+    match_threshold: 0.1
+    ransac_thres: 3
+    no_match_upscale: True
+aachen:
+    <<: *default
+    match_threshold: 0.1 # Save all matches
+    pairs: ['pairs-db-night_benchmark.txt', 'pairs-query-night_benchmark.txt']
+    npts: 4096
+    imsize: 1024
+    qt_dthres: 4
+    qt_psize: 48
+    qt_unique: True
+    ransac_thres: [20]
+    sc_thres: 0.1 # Filtering during quantization
+    covis_cluster: False
+inloc:
+    <<: *default
+    match_threshold: 0.4
+    npts: 4096
+    imsize: 1024
+    pairs: 'pairs-query-netvlad40-temporal.txt'
+    rthres: 48
+    skip_matches: 20

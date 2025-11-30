@@ -1,0 +1,46 @@
+imgaug==0.4.0
+matplotlib==3.5.1
+numpy==1.22.3
+opencv_python==4.6.0.66
+Pillow==9.2.0
+PyYAML==6.0
+scikit_learn==1.1.1
+scipy==1.8.0
+# torch==1.8.1
+# torchvision==0.9.1
+tqdm==4.64.0
+
+# pip install sympy protobuf
+# pip install pytorch-lightning==1.6.0
+# einops
+# pydegensac
+# kornia
+
+# loguru
+# h5py
+# albumentations
+
+
+# pip install torch==1.8.1+cu111 torchvision==0.9.1+cu111 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
+
+# 新环境依赖
+pytorch_lightning==2.0.9
+torch==2.0.0
+scikit-image
+h5py
+scikit-learn
+# imgaug
+kornia
+loguru
+albumentations==1.3.1
+einops
+pydegensac
+tensorboard
+
+# ps aux | grep "[b]in/python.*train_homo_srmatcher.py" | awk '{print $2}' | xargs -I {} sh -c 'echo {} && kill {}'
+# ps aux | grep "[p]ython.*train_homo_srmatcher.py" | awk '{print $2}' | xargs -I {} sh -c 'echo {} && kill {}'
+
+
+# conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=12.1 -c pytorch -c nvidia
+
+
